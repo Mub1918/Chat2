@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.ListView?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.chat.client.ChatController" style="-fx-background-color: grey">
+    <padding>
+        <Insets bottom="5.0" left="15.0" right="5.0" top="5.0"/>
+    </padding>
+
+    <HBox fx:id="hBox" HBox.hgrow="ALWAYS" visible="true" spacing="10">
+        <TextField fx:id="loginField" promptText="login" style="-fx-background-color: darkgrey"/>
+        <PasswordField fx:id="passField" promptText="password" style="-fx-background-color: darkgrey" />
+        <Button defaultButton="true" onAction="#authButton" style="-fx-background-color: red">Auth</Button>
+    </HBox>
+    <VBox fx:id="vBox" visible="false">
+        <HBox VBox.vgrow="ALWAYS" fx:id="info">
+            <TextArea fx:id="textArea"  HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" style="-fx-background-color: darkgrey" editable="false"/>
+            <ListView fx:id="users" style="-fx-background-color: darkgrey" onMouseClicked="#selectUsers" />
+        </HBox>
+        <HBox fx:id="sendBox" >
+            <TextField fx:id="textField" HBox.hgrow="ALWAYS" promptText="Введите сообщение" style="-fx-background-color: darkgrey"/>
+            <Button defaultButton="true" onAction="#sendButton" style="-fx-background-color: green">Send</Button>
+        </HBox>
+    </VBox>
+</VBox>
